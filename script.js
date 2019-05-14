@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const paletteColor = getComputedStyle(event.target).backgroundColor;
         color = paletteColor;
         colorIndicator.style.backgroundColor = color;
-
     })
 
     gridContainer.addEventListener('click', function (event) {
-        event.target.style.backgroundColor = color;
+        if (event.target.className === 'grid-unit') {
+          event.target.style.backgroundColor = color;
+        }
         
     });
 
